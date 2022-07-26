@@ -87,7 +87,7 @@ class Gaze(spaces.Box):
     def __init__(self, low, high, shape, window_size):
         super().__init__(low = low, high = high, shape = shape)
         self.window_size = window_size
-        self.radius = 6
+        self.radius = 16
         self.alpha_gaze = 2
         self.alpha_dir = 2
         self._gaze_velosity_initial = 1.0
