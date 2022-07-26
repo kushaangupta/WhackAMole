@@ -12,7 +12,7 @@ class Mole(spaces.Box):
         self.is_visible = 0
         self.p_popping = 0.3
         self.max_life = 20
-        self.radius = 10
+        self.radius = 3
         self.reward_hit = 100
         self.reward_miss = -10
         self.mode_mole = mode
@@ -87,7 +87,7 @@ class Gaze(spaces.Box):
     def __init__(self, low, high, shape, window_size):
         super().__init__(low = low, high = high, shape = shape)
         self.window_size = window_size
-        self.radius = 50
+        self.radius = 6
         self.alpha_gaze = 2
         self.alpha_dir = 2
         self._gaze_velosity_initial = 1.0
@@ -227,7 +227,7 @@ class WhackAMole(gym.Env):
     def __init__(self, render_mode = None, mode_mole = None):
         print(f'render mode: {render_mode}')
         self.render_mode = render_mode
-        self.window_size = (512, 512) # PyGame window size
+        self.window_size = (64, 64) # PyGame window size
         self.total_num_of_frames = 500
         # self.action_space = spaces.Dict(
         #     {
